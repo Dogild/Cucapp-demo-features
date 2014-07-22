@@ -1,6 +1,6 @@
 @import <Foundation/Foundation.j>
 
-@implementation Cucumber (CucumberCategory)
+@implementation Cucumber (CuCapp)
 
 - (CPString)valueIsEqual:(CPArray)params
 {
