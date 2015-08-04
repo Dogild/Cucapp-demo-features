@@ -10,8 +10,12 @@ Given /^the user make a left click on the add button$/ do
   sleep(0.5)
 end
 
+Given /^the user make a left click on the external button$/ do
+  app.gui.simulate_left_click         "//CPButton[cucappIdentifier='cucappIdentifier-button-external']", []
+  sleep(0.5)
+end
+
 Then /^I enter the value (.*)$/ do |value|
-  app.gui.wait_for                    "//CPTextField[cucappIdentifier='cucappIdentifier-field-name']"
   app.gui.simulate_keyboard_events    value , []
 end
 
@@ -30,3 +34,17 @@ Then /^I drop (.*) on (.*)$/ do |first_value, second_value|
   app.gui.simulate_dragged_click_view_to_view   "//CPTextField[cucappIdentifier='cucappIdentifier-tableView-cell-"+second_value+"']", "//CPTextField[cucappIdentifier='cucappIdentifier-tableView-cell-"+first_value+"']", []
 end
 
+Then /^I close my window$/ do
+  app.gui.close_window    "//CPWindow[cucappIdentifier='cucappIdentifier-window-external']"
+  sleep(1)
+end
+
+Given /^the user wants the main window in front$/ do
+  app.gui.make_key_and_order_front_window    "//CPWindow[cucappIdentifier='cucappIdentifier-window-main']"
+  sleep(1)
+end
+
+Given /^the user wants the external window in front$/ do
+  app.gui.make_key_and_order_front_window    "//CPWindow[cucappIdentifier='cucappIdentifier-window-external']"
+  sleep(1)
+end

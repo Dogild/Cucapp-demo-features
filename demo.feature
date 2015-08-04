@@ -47,3 +47,10 @@ Feature: Demo
       Then I should have the value Cucapp
       Then I drop Cucapp on Cappuccino
       Then I should have the value CucappCappuccino
+
+   Scenario: Open an external window
+     Given the user make a left click on the external button
+     Given the user wants the main window in front
+     Given the user wants the external window in front
+     Then I enter the value CappuccinoInAnExternalWindow
+     Then I close my window
