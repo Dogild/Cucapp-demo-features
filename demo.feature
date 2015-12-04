@@ -26,6 +26,12 @@ Feature: Demo
      Then I press the key enter
      Then I should have the value Cappuccino
 
+   Scenario: Open the popover with a double click event and enter a value
+     Given the user make a double click on the tableView
+     Then I enter the value Cappuccino
+     Then I press the key enter
+     Then I should have the value Cappuccino
+
    Scenario: Create two entries
      Given the user make a left click on the add button
      Then I enter the value Cappuccino

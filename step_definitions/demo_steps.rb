@@ -10,6 +10,12 @@ Given /^the user make a left click on the add button$/ do
   sleep(0.5)
 end
 
+Given /^the user make a double click on the tableView$/ do
+  app.gui.simulate_double_click       "//CPTableView[cucappIdentifier='cucappIdentifier-tableView']", []
+  app.gui.wait_for                    "//CPTextField[cucappIdentifier='cucappIdentifier-field-name']"
+  sleep(0.5)
+end
+
 Given /^the user make a left click on the external button$/ do
   app.gui.simulate_left_click         "//CPButton[cucappIdentifier='cucappIdentifier-button-external']", []
   sleep(0.5)
